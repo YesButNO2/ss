@@ -1,0 +1,476 @@
+@import url(https://css.reizu.moe/uwu/uwu.css);
+@import url(https://envyxyz.github.io/removal/removal.css);
+
+/* global variables */
+
+:root {
+    --text-color: #3f3f3f;
+    --accent-color: #cfbfff;
+    --health-color: white;
+    --ammo-color: white;
+    --premium-color: #cfbfff;
+    --verified-color: #cfbfff;
+    --menu-bg-color: rgba(255, 255, 255, 1);
+    --menu-bg-color-secondary: rgba(230, 230, 230, 1);
+    --ingame-bg-color: rgba(15, 15, 15, .2);
+    --text-transform: none;
+}
+
+@font-face {
+    font-family: gamefont;
+    src: url(https://raw.githubusercontent.com/South-Paw/typeface-vag-rounded/master/files/vag-rounded-400.woff2);
+}
+
+@font-face {
+	font-family: hpammo;
+	src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_c5H3gnD_g.woff2);
+}
+
+/* health */
+
+#challIcon {
+    display: inline-block !important;
+	position: fixed;
+    width: 50px;
+	height: 50px;
+	left: 36%;
+	bottom: 55px;
+	filter: brightness(0) invert(1) drop-shadow(2px 2px 3px rgba(30, 30, 30, .5));
+}
+
+#healthValue {
+	position: fixed;
+	left: 40%;
+	bottom: 25px;
+	font-size: 96px;
+}
+
+/* ammo */
+
+#ammoIcon {
+    display: inline-block !important;
+	position: fixed;
+    width: 50px;
+	height: 50px;
+	right: 36%;
+	bottom: 55px;
+    margin-right: 0;
+	margin-left: 0;
+	filter: brightness(0) invert(1) drop-shadow(2px 2px 3px rgba(30, 30, 30, .5));
+}
+
+#ammoVal {
+	position: fixed;
+	font-size: 96px;
+	right: 40%;
+	bottom: 25px;
+}
+
+#reloadMsg {
+	bottom: 150px;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+/* timer */
+
+#timerDisplay {
+	width: 200px;
+	height: 80px;
+	background-color: transparent;
+	will-change: unset;
+}
+
+#timerVal {
+	font-size: 64px;
+	padding-left: 0;
+	will-change: unset;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+/* score */
+
+#teamScores {
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 685px;
+	height: 50px;
+	padding: 10px;
+	padding-left: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	margin-left: 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	border-radius: 0;
+	background-color: transparent;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+.tScore {
+	display: inline-block;
+}
+
+#tScoreV1 {
+	position: fixed;
+	left: -25%;
+	top: 4px;
+}
+
+#tScoreV2 {
+	position: fixed;
+	left: 25%;
+	top: 4px;
+}
+
+.tScoreT {
+	width: 100%;
+	margin-top: 12px;
+	text-align: center;
+	font-size: 24px;
+	color: white;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+	z-index: 2;
+}
+
+.tScoreM {
+	display: none;
+}
+
+.tScoreF {
+	left: 50%;
+	width: 90px;
+	height: 60px;
+	margin-left: 125px;
+	margin-right: 125px;
+	padding-left: 0;
+	padding-right: 0;
+	background-color: #eb5656;
+	color: transparent;
+	opacity: 50%;
+	z-index: 1;
+}
+
+.tScoreF.you {
+	background-color: #5699eb;
+	color: transparent;
+	opacity: 50%;
+	z-index: 1;
+}
+
+.tScoreC {
+	left: 50%;
+	width: 90px;
+	height: 60px;
+	margin-left: 125px;
+	margin-right: 125px;
+	background-color: var(--accent-color);
+	opacity: 50%;
+	z-index: 1;
+}
+
+.tScoreC.you {
+	background-color: white;
+	opacity: 50%;
+	z-index: 1;
+}
+
+/* other hud elements */
+
+#ingameFPS {
+	color: white !important;
+	visibility: visible;
+}
+
+#ingameFPS::after {
+    content: ' fps';
+    text-transform: var(--text-transform);
+}
+
+#pingText::after {
+    content: ' ms';
+}
+
+#pingIcon {
+	display: none;
+}
+
+#weapDisplay {
+	display: none !important;
+}
+
+#gameMessage {
+	top: 80px;
+}
+
+#newsHolder {
+    display: none;
+}
+
+.menBtnIcn {
+    display: none!important;
+}
+
+#menuItemContainer {
+    background-color: transparent
+}
+
+#termsInfo div:not([onClick="showWindow(35)"]),
+#mLevelCont{
+    display: none
+}
+
+#menuWindow * {
+    border: hidden
+}
+
+#uiBase.onMenu #spectateUI {
+    display: block !important;
+}
+
+#uiBase.onMenu #spectateHUD {
+    position: fixed !important;
+    right: 50%;
+    top: 50%;
+    width: max-content;
+    transform: translateX(-50%) translateY(50%)!important;
+    z-index: 1
+}
+
+#uiBase.onMenu #specNames,
+#uiBase.onMenu #specKPDContr,
+#uiBase.onMenu #specNames,
+#uiBase.onMenu #specContr,
+#uiBase.onMenu #specTeam0,
+#uiBase.onMenu #spec0,
+#uiBase.onMenu #specTeam1,
+#uiBase.onMenu #spec1,
+#specGMessage {
+    display: none !important;
+}
+
+#uiBase.onMenu .spectateInfo {
+    bottom: 0
+}
+
+#uiBase.onMenu #specTimer {
+    background-color: transparent;
+    font-size: 40px !important;
+    text-align: center !important;
+}
+
+#uiBase.onMenu #specGameInfo {
+    text-align: center;
+    color: var(--accent-color)
+}
+
+#uiBase.onMenu #spectButton{
+	top: 430px;
+	left: 5px
+}
+
+/* Menu Class Selector Code Made by envy#2172 */
+
+#uiBase.onMenu #hiddenClasses {
+    display: block!important;
+    position: fixed;
+    background: #8989895c;
+    width: 70px;
+    height: 296px;
+    top: 80px;
+    padding: 17px 12px 17px 15px;
+    border-radius: 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    pointer-events: auto;
+    transition-duration: 420ms;
+    border-radius: 0;
+    border-bottom-right-radius: 12px;
+}
+
+#uiBase.onMenu #hiddenClasses:hover {
+    width: 264px;
+}
+
+#menuClassPicker0 {
+    margin-top: 0!important;
+}
+
+#uiBase.onMenu #hiddenClasses:hover div {
+    width: 266px;
+}
+
+#menuClassPicker0,
+#menuClassPicker1,
+#menuClassPicker2,
+#menuClassPicker6,
+#menuClassPicker5,
+#menuClassPicker12 {
+    background-color: #ffffff4f;
+    position: relative;
+    width: 73px;
+    height: 64px;
+    margin-top: 15px;
+    pointer-events: auto;
+    border-radius: 4px;
+    transition: 420ms;
+}
+
+#menuClassPicker0::after,
+#menuClassPicker1::after,
+#menuClassPicker2::after,
+#menuClassPicker6::after,
+#menuClassPicker5::after,
+#menuClassPicker12::after {
+    content: '';
+    position: relative;
+    float: right;
+    margin: 4px 7px;
+    left: unset;
+    height: 58px;
+    width: 58px;
+    background-size: 54px;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+#menuClassPicker0::after {
+    background-image: url(https://assets.krunker.io/textures/classes/icon_0.png);
+}
+
+#menuClassPicker1::after {
+    background-image: url(https://assets.krunker.io/textures/classes/icon_1.png);
+}
+
+#menuClassPicker2::after {
+    background-image: url(https://assets.krunker.io/textures/classes/icon_2.png);
+}
+
+#menuClassPicker5::after {
+    background-image: url(https://assets.krunker.io/textures/classes/icon_5.png);
+}
+
+#menuClassPicker6::after {
+    background-image: url(https://assets.krunker.io/textures/classes/icon_6.png);
+}
+
+#menuClassPicker12::after {
+    background-image: url(https://assets.krunker.io/textures/classes/icon_12.png);
+}
+
+#hiddenClasses:hover div::before {
+    opacity: 1;
+    transition-delay: 200ms;
+    transition-duration: 420ms;
+}
+
+#hiddenClasses div:hover {
+    cursor: pointer;
+}
+
+#menuClassPicker0::before,
+#menuClassPicker1::before,
+#menuClassPicker2::before,
+#menuClassPicker6::before,
+#menuClassPicker5::before,
+#menuClassPicker12::before {
+    font-size: 28px;
+    position: absolute;
+    color: var(--text-color);
+    margin: 15px 0px;
+    width: 152px;
+    padding-left: 15px;
+    text-align: center;
+    opacity: 0;
+    transition-duration: 250ms;
+    /* text-shadow: 0px -1.6px 0px black, 0px 1.6px 0px black, 2px 0px 0px black, -2px 0px 0px black, 1.6px 2px 0px black, -1.6px 2px 0px black, 1.6px -2px 0px black, -1.6px -2px 0px black!Important; */
+}
+
+.button.small,
+.menuItemTitle,
+#customizeButton,
+#accManagerBtn {
+    text-shadow: 0px -1.6px 0px black, 0px 1.6px 0px black, 2px 0px 0px black, -2px 0px 0px black, 1.6px 2px 0px black, -1.6px 2px 0px black, 1.6px -2px 0px black, -1.6px -2px 0px black!Important;
+}
+
+#menuClassPicker0::before {
+    content: 'Triggerman';
+}
+
+#menuClassPicker1::before {
+    content: 'Hunter'!important;
+}
+
+#menuClassPicker2::before {
+    content: 'Run N Gun';
+}
+
+#menuClassPicker5::before {
+    content: 'Detective';
+}
+
+#menuClassPicker6::before {
+    content: 'Marksman';
+}
+
+#menuClassPicker12::before {
+    content: 'Commando';
+}
+
+#menuWindow.dark,
+.settingTab{
+	background: var(--menu-bg-color-secondary) !important;
+}
+
+.plusOrMinus,
+.setBodH,
+.setHed,
+.settingsHeader{
+	background-color: var(--menu-bg-color) !important;
+	color: var(--text-color) !important;
+	border-radius: 12px
+}
+
+.settName,
+.setBodH,
+.settingTab{
+	color: var(--text-color) !important
+}
+
+.settingsHeader{
+	position: sticky;
+	width: 102%
+}
+
+#menuWindow::-webkit-scrollbar{
+	display: none
+}
+
+.settingsBtn{
+	color: var(--text-color)!important
+}
+
+.onCompMenu #timerDisplay{
+	position: static;
+	margin: 0 90px
+}
+
+.onCompMenu .debugInfo{
+	position: fixed;
+	left: 20px;
+	top: 90px;
+	display: flex;
+	flex-direction: row-reverse;
+	display: none
+}
+
+.onCompMenu .debugInfo *{
+	margin: 0 10px!important
+}
+
+#policeButton{
+	display: block!important
+}
